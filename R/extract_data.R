@@ -178,7 +178,7 @@ sectors_plastic <- function(extracted_data){
   #Add percentage data
   output_df$prop <- percentages/100
 
-  write.csv(x = df, file = "./inst/extdata/sectors_plastic.csv", row.names = FALSE)
+  write.csv(x = output_df, file = "./inst/extdata/sectors_plastic.csv", row.names = FALSE)
 
   return()
 

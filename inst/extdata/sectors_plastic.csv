@@ -1,17 +1,57 @@
-"V1","V2","V3","V4","V5","V6","V7","V8","V9","V10"
-"Market","LDPE,",NA,NA,NA,NA,NA,NA,NA,NA
-NA,NA,"HDPE","PP","PS","PVC","PET","PUR","Other","Total"
-"Sector","LLDPE",NA,NA,NA,NA,NA,NA,NA,NA
-"Transportation","0.1%","0.8%","2.6%","0.0%","0.3%","0.0%","1.6%","1.4%","6.7%"
-"Packaging","13.5%","9.3%","8.2%","2.3%","0.9%","10.1%","0.2%","0.1%","44.8%"
-"Building and","1.1%","3.3%","1.2%","2.2%","8.1%","0.0%","2.4%","0.5%","18.8%"
-"Construction",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Electrical","0.5%","0.2%","0.9%","0.6%","0.4%","0.0%","0.4%","1.0%","3.8%"
-"/Electronic",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Consumer &","2.9%","1.7%","3.8%","1.8%","0.6%","0.0%","1.0%","0.2%","11.9%"
-"Institutional",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Products",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Industrial","0.2%","0.1%","0.2%","0.0%","0.0%","0.0%","0.3%","0.0%","0.8%"
-"Machinery",NA,NA,NA,NA,NA,NA,NA,NA,NA
-"Other","1.7%","0.9%","4.2%","0.7%","1.4%","0.0%","2.5%","1.7%","13.2%"
-"Total","20.0%","16.3%","21.0%","7.6%","11.8%","10.2%","8.2%","4.9%","100.0%"
+"sector","plastic","prop"
+"Transportation","LDPE",1e-03
+"Packaging","LDPE",0.135
+"Construction","LDPE",0.011
+"Electrical","LDPE",5e-03
+"Consumer products","LDPE",0.029
+"Industrial machinery","LDPE",2e-03
+"Other","LDPE",0.017
+"Transportation","HDPE",8e-03
+"Packaging","HDPE",0.093
+"Construction","HDPE",0.033
+"Electrical","HDPE",2e-03
+"Consumer products","HDPE",0.017
+"Industrial machinery","HDPE",1e-03
+"Other","HDPE",9e-03
+"Transportation","PP",0.026
+"Packaging","PP",0.082
+"Construction","PP",0.012
+"Electrical","PP",9e-03
+"Consumer products","PP",0.038
+"Industrial machinery","PP",2e-03
+"Other","PP",0.042
+"Transportation","PS",0
+"Packaging","PS",0.023
+"Construction","PS",0.022
+"Electrical","PS",6e-03
+"Consumer products","PS",0.018
+"Industrial machinery","PS",0
+"Other","PS",7e-03
+"Transportation","PVC",3e-03
+"Packaging","PVC",9e-03
+"Construction","PVC",0.081
+"Electrical","PVC",4e-03
+"Consumer products","PVC",6e-03
+"Industrial machinery","PVC",0
+"Other","PVC",0.014
+"Transportation","PET",0
+"Packaging","PET",0.101
+"Construction","PET",0
+"Electrical","PET",0
+"Consumer products","PET",0
+"Industrial machinery","PET",0
+"Other","PET",0
+"Transportation","PUR",0.016
+"Packaging","PUR",2e-03
+"Construction","PUR",0.024
+"Electrical","PUR",4e-03
+"Consumer products","PUR",1e-02
+"Industrial machinery","PUR",3e-03
+"Other","PUR",0.025
+"Transportation","Other",0.014
+"Packaging","Other",1e-03
+"Construction","Other",5e-03
+"Electrical","Other",1e-02
+"Consumer products","Other",2e-03
+"Industrial machinery","Other",0
+"Other","Other",0.017
