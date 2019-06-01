@@ -56,7 +56,9 @@ total_plastic <- function(extracted_data){
   df[, 1] <- as.numeric(df[, 1])
   df[, 2] <- as.numeric(df[, 2])
 
-  return(df)
+  write.csv(x = df, file = "./inst/extdata/total_plastic.csv", row.names = FALSE)
+
+  return()
 
 }
 
@@ -100,7 +102,9 @@ sectors_waste <- function(extracted_data){
   df[, 2] <- as.numeric(df[, 2])
   df[, 3] <- as.numeric(df[, 3])
 
-  return(df)
+  write.csv(x = df, file = "./inst/extdata/sectors_waste.csv", row.names = FALSE)
+
+  return()
 
 }
 
@@ -143,7 +147,9 @@ plastics_waste <- function(extracted_data){
   df[, 2] <- as.numeric(df[, 2])
   df[, 3] <- as.numeric(df[, 3])
 
-  return(df)
+  write.csv(x = df, file = "./inst/extdata/plastics_waste.csv", row.names = FALSE)
+
+  return()
 
 }
 
@@ -172,6 +178,8 @@ sectors_plastic <- function(extracted_data){
   #Add percentage data
   output_df$prop <- percentages/100
 
-  return(output_df)
+  write.csv(x = df, file = "./inst/extdata/sectors_plastic.csv", row.names = FALSE)
+
+  return()
 
 }
