@@ -33,7 +33,16 @@ links <- as.data.frame(df_plastic) %>%
     plasticID = as.numeric(as.factor(plastic)) + 6  ## to have unique IDs across groups
   )
 
-nodes <- data.frame(name = c(as.character(links$sector), as.character(links$plastic)) %>% unique())
+nodes <- data.frame(name = c(sort(unique(links$sector)), sort(unique(links$plastic))))
+
+nodes <- links %>% 
+  arrange(sectorID, plasticID) %>% 
+  dplyr::select(sector, plastic) %>% 
+  unlist(use.names = F) %>% 
+  unique() %>%
+  as.tibble() %>% 
+  rename(name = "value") %>%  ## sankeyNetwork only takes a data.frame with "name" as colname
+  as.data.frame()
 
 sankeyNetwork(Links = links, 
               Nodes = nodes, 
