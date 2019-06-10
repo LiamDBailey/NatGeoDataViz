@@ -1,27 +1,27 @@
 ## NatGeoDataViz - Sankey Diagram
 
 library(tidyverse)
-library(networkD3)
+library(ggforce)
+library(svglite)
 library(extrafont)
 
 extrafont::loadfonts()
 
 df_plastic <- readr::read_csv("https://raw.githubusercontent.com/LiamDBailey/NatGeoDataViz/master/inst/extdata/sectors_plastic.csv")
 
-links <- as.data.frame(df_plastic) %>%
-  mutate(
-    plastic = if_else(plastic == "Other", "Misc", plastic),  ## to avoid same name in both groups
-    sectorID = as.numeric(as.factor(sector)) - 1,  ## ID needs to start with 0
-    plasticID = as.numeric(as.factor(plastic)) + 6  ## to have unique IDs across groups
-  )
+df_plastic %>%
+  filter(sector == "Packaging") %>%
+  mutate(plastic = if_else(plastic %in% c("Other", "PUR"), "Other", plastic)) %>%
+  group_by(sector, plastic) %>%
+  summarize(prop = sum(prop)) %>%
+  gather_set_data(1:2) %>%
+  ungroup() %>%
+  ggplot(aes(x, id = id, split = y, value = prop)) +
+    geom_parallel_sets(fill = "#7D96AF", axis.width = 0.15, alpha = 1) +
+    geom_parallel_sets_axes(fill = "transparent", axis.width = 0.5) +
+    geom_parallel_sets_labels(colour = "black", family = "Poppins",
+                              size = 8, angle = 0, vjust = 0) +
+    coord_flip() +
+    theme_void()
 
-nodes <- data.frame(name = c(sort(unique(links$sector)), sort(unique(links$plastic))))
-
-sankeyNetwork(Links = links,
-              Nodes = nodes,
-              Source = "sectorID",
-              Target = "plasticID",
-              Value = "prop",
-              NodeID = "name",
-              sinksRight = FALSE)
-
+ggsave("sankey_packaging.svg", width = 12, height = 10)
